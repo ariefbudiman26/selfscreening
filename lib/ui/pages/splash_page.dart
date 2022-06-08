@@ -23,28 +23,19 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: splashColor,
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
           Container(
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.only(bottom: 50),
+            width: double.infinity,
+            height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/check.jpg'),
+                image: AssetImage('assets/images/splash.jpg'),
               ),
             ),
-          ),
-          // Text(
-          //   'SELF SCREENING',
-          //   style: whiteTextStyle.copyWith(
-          //       fontSize: 16, fontWeight: medium, letterSpacing: 12),
-          // ),
+          )
         ],
-      )),
+      ),
     );
   }
 }

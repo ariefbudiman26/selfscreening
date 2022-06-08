@@ -29,7 +29,8 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding:
+              const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 30),
           child: Column(
             children: [
               Expanded(
@@ -57,30 +58,12 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           )),
                   const Spacer(),
-                  // SizedBox(
-                  //   width: 60,
-                  //   height: 60,
-                  //   child: ElevatedButton(
-                  //     onPressed: () {
-                  //       _pageIndex == (data.length - 1)
-                  //           ? Navigator.pushNamed(context, '/sign-in-page')
-                  //           : _pageController.nextPage(
-                  //               duration: const Duration(milliseconds: 300),
-                  //               curve: Curves.ease);
-                  //     },
-                  //     style: ElevatedButton.styleFrom(
-                  //         shape: CircleBorder(), primary: purpleButtonColor),
-                  //     child: _pageIndex == (data.length - 1)
-                  //         ? Text("Get Started")
-                  //         : const Icon(Icons.arrow_forward_rounded),
-                  //   ),
-                  // ),
                   InkWell(
                     onTap: () {
                       _pageIndex == (data.length - 1)
                           ? Navigator.pushNamed(context, '/sign-in-page')
                           : _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
+                              duration: const Duration(milliseconds: 800),
                               curve: Curves.ease);
                     },
                     child: AnimatedContainer(
@@ -102,9 +85,6 @@ class _LandingPageState extends State<LandingPage> {
                               color: Colors.white,
                             ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 50,
                   ),
                 ],
               ),
