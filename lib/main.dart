@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:selfscreening/ui/pages/landing_page.dart';
+import 'package:selfscreening/ui/pages/sign_in_page.dart';
 import 'package:selfscreening/ui/pages/splash_page.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/landing-page': (context) => LandingPage(),
+        '/sign-in-page': (context) => SignInPage(),
       },
     );
   }

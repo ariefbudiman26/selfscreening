@@ -57,19 +57,54 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           )),
                   const Spacer(),
-                  SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        _pageController.nextPage(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.ease);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(), primary: purpleButtonColor),
-                      child: const Icon(Icons.arrow_forward_rounded),
+                  // SizedBox(
+                  //   width: 60,
+                  //   height: 60,
+                  //   child: ElevatedButton(
+                  //     onPressed: () {
+                  //       _pageIndex == (data.length - 1)
+                  //           ? Navigator.pushNamed(context, '/sign-in-page')
+                  //           : _pageController.nextPage(
+                  //               duration: const Duration(milliseconds: 300),
+                  //               curve: Curves.ease);
+                  //     },
+                  //     style: ElevatedButton.styleFrom(
+                  //         shape: CircleBorder(), primary: purpleButtonColor),
+                  //     child: _pageIndex == (data.length - 1)
+                  //         ? Text("Get Started")
+                  //         : const Icon(Icons.arrow_forward_rounded),
+                  //   ),
+                  // ),
+                  InkWell(
+                    onTap: () {
+                      _pageIndex == (data.length - 1)
+                          ? Navigator.pushNamed(context, '/sign-in-page')
+                          : _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.ease);
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      height: 60,
+                      alignment: Alignment.center,
+                      width: _pageIndex == (data.length - 1) ? 150 : 60,
+                      decoration: BoxDecoration(
+                        color: purpleButtonColor,
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      child: _pageIndex == (data.length - 1)
+                          ? Text(
+                              "Get Started",
+                              style: whiteTextStyle,
+                            )
+                          : const Icon(
+                              Icons.arrow_forward_rounded,
+                              color: Colors.white,
+                            ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   ),
                 ],
               ),
