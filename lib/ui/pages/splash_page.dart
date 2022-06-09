@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:selfscreening/themes.dart';
@@ -22,18 +23,30 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var screenHeight = size.height;
+    var screenWidth = size.width;
     return Scaffold(
       body: Stack(
         children: [
           Container(
-            width: double.infinity,
-            height: double.infinity,
+            width: screenWidth,
+            height: screenHeight,
             decoration: BoxDecoration(
               image: DecorationImage(
+                fit: BoxFit.fill,
                 image: AssetImage('assets/images/splash.jpg'),
               ),
             ),
-          )
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              "SELF SCREENING",
+              style: whiteTextStyle.copyWith(
+                  fontSize: 30, fontWeight: medium, letterSpacing: 10),
+            )),
+          ),
         ],
       ),
     );

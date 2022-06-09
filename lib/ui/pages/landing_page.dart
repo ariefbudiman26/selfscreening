@@ -27,6 +27,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding:
@@ -61,7 +62,7 @@ class _LandingPageState extends State<LandingPage> {
                   InkWell(
                     onTap: () {
                       _pageIndex == (data.length - 1)
-                          ? Navigator.pushNamed(context, '/sign-in-page')
+                          ? Navigator.pushNamed(context, '/home-page')
                           : _pageController.nextPage(
                               duration: const Duration(milliseconds: 800),
                               curve: Curves.ease);

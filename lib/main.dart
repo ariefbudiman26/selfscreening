@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:selfscreening/ui/pages/home_page.dart';
 import 'package:selfscreening/ui/pages/landing_page.dart';
 import 'package:selfscreening/ui/pages/sign_in_page.dart';
 import 'package:selfscreening/ui/pages/splash_page.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/landing-page': (context) => LandingPage(),
+        '/home-page': (context) => HomePage(),
         '/sign-in-page': (context) => SignInPage(),
       },
     );
