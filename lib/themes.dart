@@ -14,9 +14,9 @@ Color borderColor = Color(0xff6A3535);
 Color greyTextColor = Color(0xff575758);
 Color whiteTextColor = Color(0xffffffff);
 
-TextStyle purpleTextStyle = GoogleFonts.poppins(color: purpletTextColor);
-TextStyle whiteTextStyle = GoogleFonts.poppins(color: whiteTextColor);
-TextStyle greyTextStyle = GoogleFonts.poppins(color: greyTextColor);
+TextStyle purpleTextStyle = TextStyle(color: purpletTextColor);
+TextStyle whiteTextStyle = TextStyle(color: whiteTextColor);
+TextStyle greyTextStyle = TextStyle(color: greyTextColor);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;

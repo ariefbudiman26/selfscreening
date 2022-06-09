@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             'Don\'t have an account? Sign Up',
             style: purpleTextStyle.copyWith(
                 fontSize: 16,
-                fontWeight: light,
+                fontWeight: medium,
                 decoration: TextDecoration.underline),
           ),
         ),
