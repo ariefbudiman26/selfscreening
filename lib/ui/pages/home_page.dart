@@ -11,6 +11,16 @@ class HomePage extends StatelessWidget {
     var screenHeight = size.height;
     var screenWidth = size.width;
 
+    Widget SingInButton() {
+      return CustomButton(
+          title: 'Sign In',
+          width: 150,
+          margin: EdgeInsets.only(top: 50, bottom: 50),
+          onPressed: () {
+            Navigator.pushNamed(context, '/sign-in-page');
+          });
+    }
+
     Widget signUpButton() {
       return GestureDetector(
         onTap: () {
@@ -22,9 +32,9 @@ class HomePage extends StatelessWidget {
           child: Text(
             'Don\'t have an account? Sign Up',
             style: purpleTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: medium,
-                decoration: TextDecoration.underline),
+              fontSize: 14,
+              fontWeight: medium,
+            ),
           ),
         ),
       );
@@ -47,13 +57,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CustomButton(
-                    title: 'Sign In',
-                    width: 150,
-                    margin: EdgeInsets.only(top: 50, bottom: 50),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in-page');
-                    }),
+                SingInButton(),
                 signUpButton(),
               ],
             ),

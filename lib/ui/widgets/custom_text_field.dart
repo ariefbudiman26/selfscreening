@@ -20,22 +20,33 @@ class CustomTextField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 20),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(title),
+        Text(
+          title,
+          style: greyTextStyle.copyWith(fontWeight: medium),
+        ),
         SizedBox(
           height: 6,
         ),
         TextFormField(
+          style: greyTextStyle.copyWith(fontWeight: medium),
           obscureText: obsecureText,
           cursorColor: greyTextColor,
           controller: controller,
           decoration: InputDecoration(
+            fillColor: greyColumnColor,
+            filled: true,
             hintText: hintText,
+            hintStyle: greyTextStyle,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(defaultRadius),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(defaultRadius),
               borderSide: BorderSide(color: purpletTextColor),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(defaultRadius),
+              borderSide: BorderSide(color: greyColumnColor),
             ),
           ),
         ),
