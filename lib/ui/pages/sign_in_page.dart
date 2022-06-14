@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:selfscreening/themes.dart';
-
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   SignInPage({Key? key}) : super(key: key);
 
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
   final TextEditingController emailController = TextEditingController(text: '');
   final TextEditingController passwordController =
       TextEditingController(text: '');
@@ -62,48 +68,45 @@ class SignInPage extends StatelessWidget {
       return CustomButton(title: 'Sign In', onPressed: () {});
     }
 
+    Widget footer() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Powered by: ',
+            style: greyTextStyle.copyWith(fontWeight: light),
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Text(
+              'Arief Budiman',
+              style: purpleTextStyle.copyWith(fontWeight: light),
+            ),
+          ),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: blackBackgroundColor,
       body: SafeArea(
-          child: Stack(
-        children: [
-          Positioned(
-            bottom: 30,
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Powered by: ',
-                  style: greyTextStyle.copyWith(fontWeight: light),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    'Arief Budiman',
-                    style: purpleTextStyle.copyWith(fontWeight: light),
-                  ),
-                ),
-              ],
+        child: ListView(
+          padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
+          children: [
+            header(),
+            SizedBox(
+              height: 150,
             ),
-          ),
-          ListView(
-            padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
-            children: [
-              header(),
-              SizedBox(
-                height: 150,
-              ),
-              emailInput(),
-              passwordInput(),
-              SizedBox(
-                height: 50,
-              ),
-              signInButton(),
-            ],
-          ),
-        ],
-      )),
+            emailInput(),
+            passwordInput(),
+            SizedBox(
+              height: 50,
+            ),
+            signInButton(),
+            footer(),
+          ],
+        ),
+      ),
     );
   }
 }
