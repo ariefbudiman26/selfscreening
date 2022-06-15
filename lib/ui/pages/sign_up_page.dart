@@ -107,25 +107,33 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       backgroundColor: blackBackgroundColor,
       body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
-          children: [
-            header(),
-            SizedBox(
-              height: 100,
-            ),
-            nameInput(),
-            departmentInput(),
-            emailInput(),
-            passwordInput(),
-            SizedBox(
-              height: 50,
-            ),
-            signUpButton(),
-            footer(),
-          ],
-        ),
-      ),
+          child: Stack(
+        children: [
+          ListView(
+            padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
+            children: [
+              header(),
+              SizedBox(
+                height: 80,
+              ),
+              nameInput(),
+              departmentInput(),
+              emailInput(),
+              passwordInput(),
+              SizedBox(
+                height: 50,
+              ),
+              signUpButton(),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              footer(),
+            ],
+          )
+        ],
+      )),
     );
   }
 }

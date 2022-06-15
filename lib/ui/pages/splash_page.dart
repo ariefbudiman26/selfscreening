@@ -25,27 +25,13 @@ class _SplashPageState extends State<SplashPage> {
     var screenHeight = size.height;
     var screenWidth = size.width;
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: screenWidth,
-            height: screenHeight,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage('assets/images/splash.jpg'),
-              ),
-            ),
-          ),
-          Container(
-            child: Center(
-                child: Text(
-              "SELF SCREENING",
-              style: whiteTextStyle.copyWith(
-                  fontSize: 30, fontWeight: medium, letterSpacing: 10),
-            )),
-          ),
-        ],
+      body: Center(
+        child: Container(
+          height: 150,
+          width: 150,
+          child: Center(
+              child: Image(image: AssetImage('assets/images/checklist.gif'))),
+        ),
       ),
     );
   }

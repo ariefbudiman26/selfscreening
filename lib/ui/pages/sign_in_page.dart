@@ -65,7 +65,11 @@ class _SignInPageState extends State<SignInPage> {
     }
 
     Widget signInButton() {
-      return CustomButton(title: 'Sign In', onPressed: () {});
+      return CustomButton(
+          title: 'Sign In',
+          onPressed: () {
+            Navigator.pushNamed(context, '/user-home-page');
+          });
     }
 
     Widget footer() {
@@ -90,23 +94,31 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: blackBackgroundColor,
       body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
-          children: [
-            header(),
-            SizedBox(
-              height: 150,
-            ),
-            emailInput(),
-            passwordInput(),
-            SizedBox(
-              height: 50,
-            ),
-            signInButton(),
-            footer(),
-          ],
-        ),
-      ),
+          child: Stack(
+        children: [
+          ListView(
+            padding: EdgeInsets.fromLTRB(defaultMargin, 80, defaultMargin, 30),
+            children: [
+              header(),
+              SizedBox(
+                height: 150,
+              ),
+              emailInput(),
+              passwordInput(),
+              SizedBox(
+                height: 50,
+              ),
+              signInButton(),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              footer(),
+            ],
+          )
+        ],
+      )),
     );
   }
 }
