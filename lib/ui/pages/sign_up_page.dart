@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:selfscreening/themes.dart';
+import 'package:selfscreening/shared/themes.dart';
 import 'package:selfscreening/ui/widgets/custom_dropdown_button.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
+
+final Uri _url = Uri.parse('https://flutter.dev');
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -90,11 +92,13 @@ class _SignUpPageState extends State<SignUpPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Powered by: ',
+            'Developed by: ',
             style: greyTextStyle.copyWith(fontWeight: light),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _launchUrl();
+            },
             child: Text(
               'Arief Budiman',
               style: purpleTextStyle.copyWith(fontWeight: light),
@@ -131,7 +135,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               footer(),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
             ],
           ),
@@ -139,4 +143,8 @@ class _SignUpPageState extends State<SignUpPage> {
       )),
     );
   }
+}
+
+void _launchUrl() async {
+  if (!await launchUrl(_url)) throw 'Could not launch $_url';
 }

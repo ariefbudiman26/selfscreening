@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:selfscreening/themes.dart';
-import 'package:url_launcher/link.dart';
+import 'package:selfscreening/shared/themes.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
+
+final Uri _url = Uri.parse('https://flutter.dev');
 
 class SignInPage extends StatefulWidget {
   SignInPage({Key? key}) : super(key: key);
@@ -16,7 +17,6 @@ class _SignInPageState extends State<SignInPage> {
   final TextEditingController emailController = TextEditingController(text: '');
   final TextEditingController passwordController =
       TextEditingController(text: '');
-
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -77,11 +77,13 @@ class _SignInPageState extends State<SignInPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Powered by: ',
+            'Developed by: ',
             style: greyTextStyle.copyWith(fontWeight: light),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _launchUrl();
+            },
             child: Text(
               'Arief Budiman',
               style: purpleTextStyle.copyWith(fontWeight: light),
@@ -124,4 +126,8 @@ class _SignInPageState extends State<SignInPage> {
       )),
     );
   }
+}
+
+void _launchUrl() async {
+  if (!await launchUrl(_url)) throw 'Could not launch $_url';
 }

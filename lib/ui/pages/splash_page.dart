@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:selfscreening/themes.dart';
+import 'package:selfscreening/shared/themes.dart';
 import 'package:selfscreening/ui/pages/landing_page.dart';
 
 class SplashPage extends StatefulWidget {

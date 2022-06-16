@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:selfscreening/themes.dart';
+import 'package:selfscreening/shared/themes.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);

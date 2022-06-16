@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:selfscreening/themes.dart';
+import 'package:selfscreening/shared/themes.dart';
 
 import '../widgets/custom_button.dart';
 
