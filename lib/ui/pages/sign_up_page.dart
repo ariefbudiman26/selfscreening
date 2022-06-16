@@ -130,8 +130,11 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               footer(),
+              SizedBox(
+                height: 5,
+              ),
             ],
-          )
+          ),
         ],
       )),
     );

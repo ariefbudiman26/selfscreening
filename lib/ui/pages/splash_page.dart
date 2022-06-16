@@ -25,6 +25,7 @@ class _SplashPageState extends State<SplashPage> {
     var screenHeight = size.height;
     var screenWidth = size.width;
     return Scaffold(
+      backgroundColor: whiteBackgroundColor,
       body: Center(
         child: Container(
           height: 150,

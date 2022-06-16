@@ -62,7 +62,7 @@ class _LandingPageState extends State<LandingPage> {
                   InkWell(
                     onTap: () {
                       _pageIndex == (data.length - 1)
-                          ? Navigator.pushNamed(context, '/home-page')
+                          ? Navigator.pushNamed(context, '/sign-in-page')
                           : _pageController.nextPage(
                               duration: const Duration(milliseconds: 800),
                               curve: Curves.ease);

@@ -115,8 +115,11 @@ class _SignInPageState extends State<SignInPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               footer(),
+              SizedBox(
+                height: 10,
+              ),
             ],
-          )
+          ),
         ],
       )),
     );
