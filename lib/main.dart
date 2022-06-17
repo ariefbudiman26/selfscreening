@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:selfscreening/ui/pages/landing_page.dart';
+import 'package:selfscreening/ui/pages/screening_page.dart';
 import 'package:selfscreening/ui/pages/sign_in_page.dart';
 import 'package:selfscreening/ui/pages/sign_up_page.dart';
 import 'package:selfscreening/ui/pages/splash_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/sign-in-page': (context) => SignInPage(),
         '/sign-up-page': (context) => SignUpPage(),
         '/user-home-page': (context) => UserHomePage(),
+        '/screening-page': (context) => ScreeningPage(),
       },
     );
   }

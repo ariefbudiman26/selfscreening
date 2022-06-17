@@ -37,7 +37,11 @@ class _UserHomePageState extends State<UserHomePage> {
     }
 
     Widget selfScreeningButton() {
-      return CustomButton(title: 'Self Screening', onPressed: () {});
+      return CustomButton(
+          title: 'Self Screening',
+          onPressed: () {
+            Navigator.pushNamed(context, '/screening-page');
+          });
     }
 
     return Scaffold(
@@ -72,6 +76,17 @@ class _UserHomePageState extends State<UserHomePage> {
                 ),
                 SizedBox(
                   height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Screening History',
+                      style: greyTextStyle.copyWith(
+                          fontSize: 16, fontWeight: medium),
+                    ),
+                  ),
                 ),
               ],
             ),
