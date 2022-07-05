@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:selfscreening/ui/widgets/question_tile.dart';
 
 import '../../shared/themes.dart';
+import '../widgets/custom_button.dart';
 
 class ScreeningPage extends StatefulWidget {
   const ScreeningPage({Key? key}) : super(key: key);
@@ -13,6 +14,14 @@ class ScreeningPage extends StatefulWidget {
 class _ScreeningPageState extends State<ScreeningPage> {
   @override
   Widget build(BuildContext context) {
+    Widget submitButton() {
+      return CustomButton(
+          title: 'Submit',
+          onPressed: () {
+            Navigator.pushNamed(context, '/result-page');
+          });
+    }
+
     return Scaffold(
         body: CustomScrollView(
       slivers: [
@@ -26,7 +35,7 @@ class _ScreeningPageState extends State<ScreeningPage> {
             title: Text(
               'Self Screening',
               style:
-                  whiteTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
+                  whiteTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
             ),
           ),
         ),
@@ -40,36 +49,48 @@ class _ScreeningPageState extends State<ScreeningPage> {
             Column(
               children: const [
                 QuestionTile(
-                  question: '1. Apakah Anda Sehat hari ini ?',
+                  question:
+                      'Apakah pernah keluar rumah/ tempat umum (pasar, fasyankes, kerumunan orang, dan lain lain) ?',
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 QuestionTile(
-                  question: '2. Apakah Anda Sehat hari ini ?',
+                  question: 'Apakah pernah menggunakan transportasi umum ?',
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 QuestionTile(
-                  question: '3. Apakah Anda Sehat hari ini ?',
+                  question:
+                      'Apakah pernah melakukan perjalanan ke luar kota/internasional ? (wilayah yang terjangkit/zona merah) ?',
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 QuestionTile(
-                  question: '4. Apakah Anda Sehat hari ini ?',
+                  question:
+                      'Apakah anda mengikuti kegiatan yang melibatkan orang banyak ?',
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 QuestionTile(
-                  question: '5. Apakah Anda Sehat hari ini ?',
+                  question:
+                      'Apakah memiliki riwayat kontak erat dengan orang yang dinyatakan kasus suspek, kasus probable, atau konfirm COVID-19 (berjabat tangan, berbicara, berada dalam satu ruangan/ satu rumah) ?',
+                ),
+                QuestionTile(
+                  question:
+                      'Apakah saat ini mengalami demam/ batuk/pilek/ sakit tenggorokan/sesak ?',
                 ),
                 SizedBox(
                   height: 15,
                 ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(40, 30, 40, 30),
+              child: submitButton(),
             ),
           ]),
         )

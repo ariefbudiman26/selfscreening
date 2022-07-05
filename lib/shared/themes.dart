@@ -8,13 +8,13 @@ Color blackBackgroundColor = Color(0xff0F0F10);
 Color whiteBackgroundColor = Color(0xffffffff);
 Color orangeColor = Colors.orange;
 Color purpleButtonColor = Color(0xff7339E5);
-Color purpletTextColor = Color(0xff804CEF);
+Color purpleTextColor = Color(0xff804CEF);
 Color greyColumnColor = Color(0xff262629);
 Color borderColor = Color(0xff6A3535);
 Color greyTextColor = Color(0xff575758);
 Color whiteTextColor = Color(0xffffffff);
 
-TextStyle purpleTextStyle = TextStyle(color: purpletTextColor);
+TextStyle purpleTextStyle = TextStyle(color: purpleTextColor);
 TextStyle whiteTextStyle = TextStyle(color: whiteTextColor);
 TextStyle greyTextStyle = TextStyle(color: greyTextColor);
 

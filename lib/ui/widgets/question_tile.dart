@@ -19,7 +19,10 @@ class _QuestionTileState extends State<QuestionTile> {
         children: [
           RadioListTile<int>(
             value: 1,
-            title: const Text('Yes'),
+            title: Text(
+              'Yes',
+              style: greyTextStyle.copyWith(fontSize: 16),
+            ),
             groupValue: selectedValue,
             onChanged: (value) => setState(() {
               selectedValue = 1;
@@ -27,7 +30,10 @@ class _QuestionTileState extends State<QuestionTile> {
           ),
           RadioListTile<int>(
             value: 2,
-            title: const Text('No'),
+            title: Text(
+              'No',
+              style: greyTextStyle.copyWith(fontSize: 16),
+            ),
             groupValue: selectedValue,
             onChanged: (value) => setState(() {
               selectedValue = 2;
@@ -41,13 +47,15 @@ class _QuestionTileState extends State<QuestionTile> {
       padding: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 1.2,
       decoration: BoxDecoration(
-        color: Colors.amber,
         borderRadius: BorderRadius.circular(defaultRadius),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(widget.question),
+          Text(
+            widget.question,
+            style: greyTextStyle.copyWith(fontSize: 16),
+          ),
           SizedBox(
             height: 10,
           ),

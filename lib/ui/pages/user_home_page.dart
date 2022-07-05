@@ -50,8 +50,13 @@ class _UserHomePageState extends State<UserHomePage> {
         slivers: [
           SliverAppBar(
             backgroundColor: purpleButtonColor,
-            leading: Icon(
-              Icons.logout,
+            leading: GestureDetector(
+              onTap: (() {
+                Navigator.pushNamed(context, '/landing-page');
+              }),
+              child: Icon(
+                Icons.logout,
+              ),
             ),
             pinned: true,
             expandedHeight: MediaQuery.of(context).size.height / 3,

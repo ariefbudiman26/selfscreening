@@ -45,7 +45,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(defaultRadius),
-                borderSide: BorderSide(color: purpletTextColor),
+                borderSide: BorderSide(color: purpleTextColor),
               ),
               filled: true,
               fillColor: greyColumnColor,

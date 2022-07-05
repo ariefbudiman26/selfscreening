@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(defaultRadius),
-              borderSide: BorderSide(color: purpletTextColor),
+              borderSide: BorderSide(color: purpleTextColor),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(defaultRadius),
