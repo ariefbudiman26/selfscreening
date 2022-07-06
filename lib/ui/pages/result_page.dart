@@ -80,23 +80,35 @@ class _ResultPageState extends State<ResultPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        '0 = Risiko Rendah',
-                        style: TextStyle(color: Colors.green, fontWeight: bold),
-                      ),
-                      Text(
-                        '1-4 = Risiko Sedang',
-                        style:
-                            TextStyle(color: Colors.yellow, fontWeight: bold),
-                      ),
-                      Text(
-                        '>5 = Risiko Tinggi',
-                        style: TextStyle(color: Colors.red, fontWeight: bold),
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: defaultMargin, right: defaultMargin),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          '0 = Risiko Rendah',
+                          style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 12,
+                              fontWeight: bold),
+                        ),
+                        Text(
+                          '1-4 = Risiko Sedang',
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontSize: 12,
+                              fontWeight: bold),
+                        ),
+                        Text(
+                          '>5 = Risiko Tinggi',
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 12,
+                              fontWeight: bold),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 15,

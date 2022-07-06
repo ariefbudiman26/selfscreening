@@ -3,9 +3,10 @@ import 'package:selfscreening/shared/themes.dart';
 import 'package:selfscreening/ui/widgets/custom_dropdown_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/custom_button.dart';
+import '../widgets/custom_password_field.dart';
 import '../widgets/custom_text_field.dart';
 
-final Uri _url = Uri.parse('https://flutter.dev');
+final Uri _url = Uri.parse('https://www.instagram.com/ariefbudiman26/');
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -75,10 +76,9 @@ class _SignUpPageState extends State<SignUpPage> {
     }
 
     Widget passwordInput() {
-      return CustomTextField(
+      return CustomTextFieldPassword(
         title: 'Password',
         hintText: 'Your Password',
-        obsecureText: true,
         controller: passwordController,
       );
     }
